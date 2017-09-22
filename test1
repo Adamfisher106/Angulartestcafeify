@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+  </head>
+  <body>
+    <script>
+    //first test
+    
+    //directing to the node js route
+        $http.post('repos/users.js', $scope.user).success(function(response) {
+        console.log(response);
+    //searching for the username and the token to get a response
+       $http.get('username').success(function(data){
+        data=JSON.Parse(data); 
+       $cookie.put('token',data.token)
+        }).error(function(error){
+        console.log(error)
+        })
+      })
+
+
+      //second test 
+
+      //just finding a token 
+
+      var z = response.token; 
+      console.log(z);
+      $cookie.put('token', z);
+
+    </script>
+  </body>
+</html>
