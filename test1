@@ -24,11 +24,14 @@
 
       //second test 
 
+      $http.post('token_generator/tokenGenerator.js', $scope.user).success(function(response) {
+        console.log(response);
+
       //just finding a token 
 
       var z = response.token; 
       console.log(z);
-      $cookie.put('token', z);
+      $cookie.put('jsonwebtoken', z);
 
     </script>
   </body>
